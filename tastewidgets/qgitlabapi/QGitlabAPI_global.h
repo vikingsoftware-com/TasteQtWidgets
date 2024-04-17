@@ -1,0 +1,12 @@
+#ifndef QGITLABAPI_GLOBAL_H
+#define QGITLABAPI_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(QGITLABAPI_LIBRARY)
+#  define QGITLABAPI_EXPORT Q_DECL_EXPORT
+#else
+#  define QGITLABAPI_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // QGITLABAPI_GLOBAL_H

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<typesystem package="TasteQtWidgets">
+    <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+    <load-typesystem name="typesystem_core.xml" generate="no"/>
+    <load-typesystem name="typesystem_gui.xml" generate="no"/>
+    <inject-code class="target" position="beginning">
+        initTraceCommonLibrary();
+    </inject-code>
+
+
+    <namespace-type name="requirement" visible="yes">
+        <object-type name="RequirementsWidget">
+        </object-type>
+        <object-type name="RequirementsManager">
+        </object-type>
+        <value-type name="Requirement">
+        </value-type>
+        <object-type name="RequirementsModelBase">
+            <enum-type name="RoleNames"/>
+            <enum-type name="HEADER_SECTIONS"/>
+        </object-type>
+    </namespace-type>
+
+    <namespace-type name="reviews" visible="yes">
+        <object-type name="ReviewsWidget">
+        </object-type>
+        <object-type name="ReviewsManager">
+        </object-type>
+        <value-type name="Review">
+        </value-type>
+        <object-type name="ReviewsModelBase">
+            <enum-type name="RoleNames"/>
+            <enum-type name="HEADER_SECTIONS"/>
+        </object-type>
+    </namespace-type>
+
+    <function signature="initTraceCommonLibrary()"/>
+    <namespace-type name="tracecommon" visible="no">
+
+        <object-type name="IssuesManager">
+            <enum-type name="REPO_TYPE"/>
+        </object-type>
+        <object-type name="TraceCommonModelBase">
+            <enum-type name="RoleNames"/>
+        </object-type>
+        <function signature="initTraceCommonLibrary"/>
+    </namespace-type>
+
+    <namespace-type name="gitlab" visible="no">
+        <object-type name="QGitlabClient">
+            <enum-type name="ReqType"/>
+        </object-type>
+        <object-type name="Issue" />
+        <object-type name="Label" />
+    </namespace-type>
+
+</typesystem>
