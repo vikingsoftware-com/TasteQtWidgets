@@ -62,11 +62,11 @@ set(CMAKE_AUTOUIC ON)
 set(original_library "QtTASTE")
 set(bindings_library ${PROJECT_NAME})
 
-set(TASTE_SUBLIB_SRC_ROOT ${CMAKE_SOURCE_DIR}/../traceability)
-add_subdirectory(${TASTE_SUBLIB_SRC_ROOT}/qgitlabapi ${CMAKE_BINARY_DIR}/traceability/qgitlabapi)
-add_subdirectory(${TASTE_SUBLIB_SRC_ROOT}/tracecommon ${CMAKE_BINARY_DIR}/traceability/tracecommon)
-add_subdirectory(${TASTE_SUBLIB_SRC_ROOT}/requirements ${CMAKE_BINARY_DIR}/traceability/requirements)
-add_subdirectory(${TASTE_SUBLIB_SRC_ROOT}/reviews ${CMAKE_BINARY_DIR}/traceability/reviews)
+set(TASTE_SUBLIB_SRC_ROOT ${CMAKE_SOURCE_DIR}/../tastewidgets)
+add_subdirectory(${TASTE_SUBLIB_SRC_ROOT}/qgitlabapi ${CMAKE_BINARY_DIR}/tastewidgets/qgitlabapi)
+add_subdirectory(${TASTE_SUBLIB_SRC_ROOT}/tracecommon ${CMAKE_BINARY_DIR}/tastewidgets/tracecommon)
+add_subdirectory(${TASTE_SUBLIB_SRC_ROOT}/requirements ${CMAKE_BINARY_DIR}/tastewidgets/requirements)
+add_subdirectory(${TASTE_SUBLIB_SRC_ROOT}/reviews ${CMAKE_BINARY_DIR}/tastewidgets/reviews)
 
 set(TasteQtWidgets_SRC
     ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/gitlab_issue_wrapper.h
@@ -153,7 +153,7 @@ endforeach()
 set(ALL_INCLUDE_PATHS
     ${QT_INCLUDES}
     ${SHIBOKEN_INCLUDE_DIR}
-    ${CMAKE_SOURCE_DIR}/../traceability
+    ${CMAKE_SOURCE_DIR}/../tastewidgets
 )
 # Include flags/path that will be set in 'target_include_directories'
 set(TasteQtWidgets_target_include_directories ${ALL_INCLUDE_PATHS})
