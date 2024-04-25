@@ -177,3 +177,6 @@ message(STATUS "Resulting Python module to be installed: " ${TasteQtWidgets_PYTH
 message("\n")
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/main.py.in ${CMAKE_CURRENT_SOURCE_DIR}/main.py)
+
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/__init__.py" DESTINATION "${TasteQtWidgets_PYTHON_BINDINGS_INSTALL_PREFIX}")
+
