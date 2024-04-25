@@ -6,9 +6,11 @@ import pathlib
 import shutil
 import platform
 import distro
+from packaging.version import Version
 import pip
 import sys
 import shlex
+import tarfile
 
 
 if sys.version_info >= (3, 8):
@@ -52,6 +54,9 @@ class SystemInfo:
         self.distributin_version = distro.version()
         self.source_dir = os.path.dirname(os.path.realpath(__file__))
         self.build_dir = self.source_dir + "/build"
+        python_dir = ".local/lib/python"+ str(self.python_version[0]) + "." + str(self.python_version[1])
+        self.python_packages_dir = str(pathlib.Path.home() / python_dir / "site-packages")
+        self.pyside_dir = self.python_packages_dir + "/PySide6"
 
     def python_version_str(self):
         return str(self.python_version[0]) + "." + str(self.python_version[1]) + "." + str(self.python_version[2])
@@ -62,6 +67,7 @@ class SystemInfo:
         print("Qt path             : " + self.qt_path)
         print("Distribution        : " + self.distribution_name)
         print("Distribution version: " + self.distributin_version)
+        print("PySide directory    : " + self.pyside_dir)
         print("Source directory    : " + self.source_dir)
         print("Build  directory    : " + self.build_dir)
 
@@ -86,7 +92,15 @@ def check_or_install(pkgName, version, extra_args=""):
         if extra_args:
             cmd = cmd +shlex.split(extra_args)
         cmd = cmd + ["--break-system-packages"]
-        run_command(cmd)
+        try:
+            run_command(cmd)
+        except CalledProcessError as e:
+            cmd = cmd + ["--index-url=https://download.qt.io/official_releases/QtForPython/", "--trusted-host download.qt.io"]
+            try:
+                print("Trying to install from Qt server")
+                run_command(cmd)
+            except CalledProcessError as e2:
+                print("Installation failed: " + pkgName)
 
 
 def apt_install(packagesNames):
@@ -100,21 +114,39 @@ def apt_install(packagesNames):
         print(e.output)
 
 
-def clang_check():
+def check_ssl(info):
+    """
+        Installs SSLv3 if the Qt version demands it. Call this, if the OS does provide SSLv3 already.
+    """
+    if Version(info.qt_version) >= Version("6.6.0"):
+        file = tarfile.open(info.source_dir+"/openssl3.tar.gz")
+        file.extractall(info.pyside_dir+"/Qt/lib")
+        file.close()
+
+
+def distro_check(info):
     config_file = '/usr/bin/llvm-config-'
     if  distro.id() == 'debian':
         if distro.version() == "10":
             config_file += '11'
             apt_install(["llvm-11", "llvm-11-dev", "libclang-11-dev", "clang-11", "patchelf", "ninja-build"])
-        if distro.version() == "11":
+            check_ssl(info)
+        elif distro.version() == "11":
             config_file += '13'
             apt_install(["llvm-13", "llvm-13-dev", "libclang-13-dev", "clang-13", "patchelf", "ninja-build"])
-
-    if  distro.id() == 'ubuntu':
+            check_ssl(info)
+        else:
+            print("Warning: untested Debian version!")
+    elif  distro.id() == 'ubuntu':
         if distro.version() == "20.04":
             config_file += '12'
             apt_install(["llvm-12", "llvm-12-dev", "libclang-12-dev", "clang-12", "patchelf", "ninja-build"])
-            
+            check_ssl(info)
+        else:
+            print("Warning: untested Ubuntu version!")
+    else:
+        print("Warning: untested operating system!")
+
     #Create symlink to llvm-config on /usr/bin
     try:
         os.symlink(config_file, "/usr/bin/llvm-config")
@@ -160,15 +192,15 @@ info = SystemInfo()
 info.print_info()
 
 print("** Check / install PySide + shiboken")
-check_or_install("aqtinstall", "", "--index-url=https://download.qt.io/official_releases/QtForPython/ --trusted-host download.qt.io")
-check_or_install("PySide6", info.qt_version, "--index-url=https://download.qt.io/official_releases/QtForPython/ --trusted-host download.qt.io")
-check_or_install("shiboken6", info.qt_version, "--index-url=https://download.qt.io/official_releases/QtForPython/ --trusted-host download.qt.io")
-check_or_install("shiboken6-generator", info.qt_version, "--index-url=https://download.qt.io/official_releases/QtForPython/ --trusted-host download.qt.io")
+check_or_install("aqtinstall", "")
+check_or_install("PySide6", info.qt_version)
+check_or_install("shiboken6", info.qt_version)
+check_or_install("shiboken6-generator", info.qt_version)
 
 import aqt
 
-print("** Check / install clang")
-clang_check()
+print("** Check / install clang, SSL, ...")
+distro_check(info)
 
 print("** Check (and install if necessary a Qt development libraries))")
 check_install_qt_dev(info)
