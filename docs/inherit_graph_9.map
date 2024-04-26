@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,72,78,99"/>
+<area shape="rect" id="Node000001" href="$classrequirement_1_1RequirementsWidget.html" title=" " alt="" coords="141,5,319,48"/>
+<area shape="poly" id="edge18_Node000000_Node000001" title=" " alt="" coords="92,67,158,46,160,51,93,72"/>
+<area shape="rect" id="Node000002" href="$classreviews_1_1ReviewsWidget.html" title=" " alt="" coords="147,72,313,99"/>
+<area shape="poly" id="edge19_Node000000_Node000002" title=" " alt="" coords="93,83,146,83,146,88,93,88"/>
+<area shape="rect" id="Node000003" href="$classtracecommon_1_1CredentialWidget.html" title=" " alt="" coords="126,123,334,149"/>
+<area shape="poly" id="edge20_Node000000_Node000003" title=" " alt="" coords="93,98,126,108,170,120,169,125,125,113,92,104"/>
+</map>
