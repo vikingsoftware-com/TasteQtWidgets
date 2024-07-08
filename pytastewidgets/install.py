@@ -135,6 +135,10 @@ def distro_check(info):
             config_file += '13'
             apt_install(["llvm-13", "llvm-13-dev", "libclang-13-dev", "clang-13", "patchelf", "ninja-build"])
             check_ssl(info)
+        elif distro.version() == "12":
+            config_file += '13'
+            apt_install(["llvm-13", "llvm-13-dev", "libclang-13-dev", "clang-13", "libgl-dev", "patchelf", "ninja-build"])
+            check_ssl(info)
         else:
             print("Warning: untested Debian version!")
     elif  distro.id() == 'ubuntu':
