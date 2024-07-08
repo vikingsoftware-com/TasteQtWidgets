@@ -5,7 +5,7 @@
 ### Prerequisites
 
 Have Python3 and PySide installed.  
-PySyde is needed to use detect the correct version of PySide and Qt.
+PySide is needed to use detect the correct version of PySide and Qt.
 
 ### Do the installation
 

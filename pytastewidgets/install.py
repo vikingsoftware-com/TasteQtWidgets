@@ -21,10 +21,10 @@ else:
 
 def module_version(moduleName):
     """
-        Returns the version of the module moduleName. 
-        Otherwise returns the string "N/A" 
+        Returns the version of the module moduleName.
+        Otherwise returns the string "N/A"
     """
-    try: 
+    try:
         if sys.version_info >= (3, 8):
             return(version(moduleName))
         else:
@@ -60,7 +60,7 @@ class SystemInfo:
 
     def python_version_str(self):
         return str(self.python_version[0]) + "." + str(self.python_version[1]) + "." + str(self.python_version[2])
-    
+
     def print_info(self):
         print("Python version      : " + self.python_version_str())
         print("Qt/PySide version   : " + self.qt_version)
@@ -136,8 +136,8 @@ def distro_check(info):
             apt_install(["llvm-13", "llvm-13-dev", "libclang-13-dev", "clang-13", "patchelf", "ninja-build"])
             check_ssl(info)
         elif distro.version() == "12":
-            config_file += '13'
-            apt_install(["llvm-13", "llvm-13-dev", "libclang-13-dev", "clang-13", "libgl-dev", "patchelf", "ninja-build"])
+            config_file += '14'
+            apt_install(["llvm-14", "llvm-14-dev", "libclang-14-dev", "clang-14", "libgl-dev", "patchelf", "ninja-build"])
             check_ssl(info)
         else:
             print("Warning: untested Debian version!")
@@ -152,12 +152,24 @@ def distro_check(info):
         print("Warning: untested operating system!")
 
     #Create symlink to llvm-config on /usr/bin
+    config_link = "/usr/bin/llvm-config"
+    # First check for a broken link
+    if os.path.islink(config_link):
+        target_path = os.readlink(config_link)
+        # Resolve relative symlinks
+        if not os.path.isabs(target_path):
+            target_path = os.path.join(os.path.dirname(config_link),target_path)
+        if not os.path.exists(target_path):
+            print("Remove broken llvm-config symlink")
+            run_command(['sudo', 'rm', config_link])
+    # Check if the link needs to be created
     try:
-        os.symlink(config_file, "/usr/bin/llvm-config")
+        os.symlink(config_file, config_link)
     except FileExistsError:
         print ("The symlink already exists")
     except OSError:
-        run_command(['sudo', 'ln', '-s', config_file, '/usr/bin/llvm-config'])
+        print ("Creating symlink '/usr/bin/llvm-config'")
+        run_command(['sudo', 'ln', '-s', config_file, config_link])
 
 
 def cmake_prepare(info, environ=os.environ):
@@ -234,4 +246,3 @@ cmake_build(info, ncpus - 1, environ=env_copy)
 
 print("** Install module")
 cmake_install(info)
-
