@@ -46,7 +46,16 @@ class SystemInfo:
         self.python_version = sys.version_info
         self.qt_version = module_version("PySide6")
         if self.qt_version == "N/A":
-            self.qt_version = "6.5.3"
+            if self.python_version[1] == 12:
+                self.qt_version = "6.6.2"
+            elif self.python_version[1] == 13:
+                self.qt_version = "6.7.2"
+            elif self.python_version[1] == 14:
+                self.qt_version = "6.7.2"
+            elif self.python_version[1] == 15:
+                self.qt_version = "6.8.1"
+            else:
+                self.qt_version = "6.5.3"
         self.qt_path = os.path.dirname(os.path.realpath(__file__)) + "/Qt"
         self.qt_base_path = os.path.join(self.qt_path, self.qt_version, "gcc_64")
         self.qt_lib_path = os.path.join(self.qt_base_path, "lib")
@@ -145,6 +154,10 @@ def distro_check(info):
         if distro.version() == "20.04":
             config_file += '12'
             apt_install(["llvm-12", "llvm-12-dev", "libclang-12-dev", "clang-12", "patchelf", "ninja-build"])
+            check_ssl(info)
+        elif distro.version() == "24.04":
+            config_file += '18'
+            apt_install(["llvm-18", "llvm-18-dev", "libclang-18-dev", "clang-18", "patchelf", "ninja-build"])
             check_ssl(info)
         else:
             print("Warning: untested Ubuntu version!")
