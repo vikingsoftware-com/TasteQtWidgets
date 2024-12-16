@@ -95,7 +95,7 @@ void CredentialWidget::updateTockenButton()
 void CredentialWidget::openTokenSettingsPage()
 {
     QUrl url(ui->urlLineEdit->text());
-    url.setPath("/-/profile/personal_access_tokens");
+    url.setPath("/-/user_settings/personal_access_tokens");
     QDesktopServices::openUrl(url);
 }
 
