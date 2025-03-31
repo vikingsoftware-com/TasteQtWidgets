@@ -40,11 +40,14 @@ def module_path(moduleName):
     except:
         return('N/A')
 
+def trim_version(version):
+    parts = version.split('.')
+    return '.'.join(parts[:3]) if len(parts) == 4 else version
 
 class SystemInfo:
     def __init__(self):
         self.python_version = sys.version_info
-        self.qt_version = module_version("PySide6")
+        self.qt_version = trim_version(module_version("PySide6"))
         if self.qt_version == "N/A":
             if self.python_version[1] == 12:
                 self.qt_version = "6.6.2"
