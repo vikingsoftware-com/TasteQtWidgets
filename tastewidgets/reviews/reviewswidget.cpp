@@ -48,6 +48,8 @@ ReviewsWidget::ReviewsWidget(QWidget *parent)
     m_tagFilterModel.setDynamicSortFilter(true);
     m_tagFilterModel.setSourceModel(&m_textFilterModel);
 
+
+
     connect(ui->refreshButton, &QPushButton::clicked, this, &ReviewsWidget::setLoginData);
     connect(ui->credentialWidget, &tracecommon::CredentialWidget::urlChanged, this,
             &ReviewsWidget::onChangeOfCredentials);
@@ -93,6 +95,9 @@ void ReviewsWidget::setManager(ReviewsManager *manager)
     if (!m_reviewsManager->token().isEmpty()) {
         ui->credentialWidget->setToken(m_reviewsManager->token());
     }
+
+    m_reviewsModel = new ComponentReviewsProxyModel(manager, this);
+    setModel(m_reviewsModel);
 }
 
 void ReviewsWidget::setModel(ReviewsModelBase *model)
@@ -101,6 +106,14 @@ void ReviewsWidget::setModel(ReviewsModelBase *model)
     m_textFilterModel.setSourceModel(m_model);
     // Note: m_tagFilterModel uses m_textFilterModel as source model
     ui->allReviews->setModel(&m_tagFilterModel);
+}
+
+void ReviewsWidget::setAcceptableIds(const QStringList &ids)
+{
+    if (m_reviewsModel)
+    {
+        m_reviewsModel->setAcceptableIds(ids);
+    }
 }
 
 QUrl ReviewsWidget::url() const
@@ -198,6 +211,11 @@ void ReviewsWidget::updateProjectReady()
 
     ui->createReviewButton->setEnabled(m_reviewsManager->hasValidProjectID());
     requestReviews();
+}
+
+void ReviewsWidget::addReviews(const QList<Review> &reviews)
+{
+    m_reviewsModel->addReviews(reviews);
 }
 
 void ReviewsWidget::onChangeOfCredentials()

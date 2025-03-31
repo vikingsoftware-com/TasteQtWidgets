@@ -17,6 +17,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/lgpl-2.1.html
 
 #pragma once
 
+#include "componentreviewsproxymodel.h"
 #include "issuetextproxymodel.h"
 #include "tagfilterproxymodel.h"
 
@@ -59,6 +60,7 @@ public:
 
     void setManager(ReviewsManager *manager);
     void setModel(ReviewsModelBase *model);
+    void setAcceptableIds(const QStringList &ids);
 
     /*!
      * Returns the URL to fetch the reviews from
@@ -86,6 +88,7 @@ public Q_SLOTS:
     void setLoginData();
     void updateServerStatus();
     void updateProjectReady();
+    void addReviews(const QList<reviews::Review> &reviews);
 
 Q_SIGNALS:
     void reviewsUrlChanged(QUrl reviewsUrl);
@@ -101,6 +104,7 @@ protected Q_SLOTS:
     void removeReview();
     void fillTagBar(const QStringList &tags);
 
+
 protected:
     bool tagButtonExists(const QString &tag) const;
 
@@ -111,6 +115,7 @@ protected:
     QPointer<ReviewsModelBase> m_model;
     tracecommon::IssueTextProxyModel m_textFilterModel;
     tracecommon::TagFilterProxyModel m_tagFilterModel;
+    ComponentReviewsProxyModel *m_reviewsModel;
 };
 
 } // namespace reviews
