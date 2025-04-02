@@ -267,7 +267,7 @@ cmake_install(info)
 try:
     import glob
     for file in glob.glob(os.path.join(info.qt_lib_path, "*")):
-        shutil.move(file, info.pytastewidgets_dir)
+        shutil.move(os.path.join(info.qt_lib_path, file), os.path.join(info.pytastewidgets_dir, file))
 except OSError as e:
     print(f"Qt libraries could'nt be copied to the PyTasteQtWidgets folder: {e}")
 
