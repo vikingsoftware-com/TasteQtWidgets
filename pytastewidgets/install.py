@@ -269,7 +269,7 @@ try:
     for file in glob.glob(os.path.join(info.qt_lib_path, "*")):
         shutil.move(file, info.pytastewidgets_dir)
 except OSError as e:
-    print(f"Fatal error: {e}")
+    print(f"Qt libraries could'nt be copied to the PyTasteQtWidgets folder: {e}")
 
 try:
     from PySide6.QtWidgets import QApplication
