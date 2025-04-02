@@ -262,3 +262,17 @@ cmake_build(info, ncpus - 1, environ=env_copy)
 
 print("** Install module")
 cmake_install(info)
+# Move the Qt libraries to the PyTasteWidgets folder
+try:
+    import glob
+    for file in glob.glob(os.path.join(info.qt_lib_path, "*")):
+        shutil.move(file, info.pyside_dir)
+except OSError as e:
+    print(f"Fatal error: {e}")
+
+try:
+    from PySide6.QtWidgets import QApplication
+    from PySide6.QtCore import SIGNAL, SLOT, QObject
+    from PyTasteQtWidgets import TasteQtWidgets as QtTaste
+except ImportError as e:
+    print(f"Required module 'PyTasteQtWidgets' not found: {e}")
