@@ -1,7 +1,5 @@
 <map id="tracecommon::IssuesManagerPrivate" name="tracecommon::IssuesManagerPrivate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,203,81"/>
-<area shape="rect" id="Node000002" href="$structrequirement_1_1RequirementsManager_1_1RequirementsManagerPrivate.html" title=" " alt="" coords="251,5,502,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,43,250,39,251,45,218,49"/>
-<area shape="rect" id="Node000003" href="$structreviews_1_1ReviewsManager_1_1ReviewsManagerPrivate.html" title=" " alt="" coords="289,72,464,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,71,289,80,288,85,218,77"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,224,80"/>
+<area shape="rect" id="node2" href="$structrequirement_1_1RequirementsManager_1_1RequirementsManagerPrivate.html" title=" " alt="" coords="272,5,553,47"/>
+<area shape="rect" id="node3" href="$structreviews_1_1ReviewsManager_1_1ReviewsManagerPrivate.html" title=" " alt="" coords="316,71,509,112"/>
 </map>

@@ -1,5 +1,6 @@
 <map id="tastewidgets/requirements" name="tastewidgets/requirements">
-<area shape="rect" id="node2" href="dir_1c0ef1c7854a5f3bab71935aa20dae9e.html" title="gitlab" alt="" coords="38,64,90,91"/>
-<area shape="rect" id="clust2" href="dir_e523f4078d10c0c7147eb3edeef4abe7.html" alt="" coords="27,53,221,101"/>
-<area shape="rect" id="clust1" href="dir_fd6764cf4efa92a2598f087f292da8b3.html" title="tastewidgets" alt="" coords="16,16,232,112"/>
+<area shape="rect" id="node2" href="dir_1c0ef1c7854a5f3bab71935aa20dae9e.html" title="gitlab" alt="" coords="232,63,304,111"/>
+<area shape="rect" id="node3" href="dir_ba8fa4d4e87b9e509bbc02c8120caea8.html" title="requirements_autogen" alt="" coords="38,63,207,111"/>
+<area shape="rect" id="clust2" href="dir_e523f4078d10c0c7147eb3edeef4abe7.html" alt="" coords="27,52,448,121"/>
+<area shape="rect" id="clust1" href="dir_fd6764cf4efa92a2598f087f292da8b3.html" title="tastewidgets" alt="" coords="16,16,459,132"/>
 </map>

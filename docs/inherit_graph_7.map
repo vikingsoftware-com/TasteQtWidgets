@@ -1,5 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,97,32"/>
-<area shape="rect" id="Node000001" href="$classtracecommon_1_1WidgetBar.html" title="This is horizontally scrollable widget bar." alt="" coords="145,5,314,32"/>
-<area shape="poly" id="edge14_Node000000_Node000001" title=" " alt="" coords="112,16,144,16,144,21,112,21"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node2" href="$classtracecommon_1_1WidgetBar.html" title="This is horizontally scrollable widget bar." alt="" coords="152,5,340,32"/>
 </map>

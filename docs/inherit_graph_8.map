@@ -1,9 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,80,159,107"/>
-<area shape="rect" id="Node000001" href="$classrequirement_1_1CheckedFilterProxyModel.html" title="The CheckedFilterProxyModel class is used to filter a Qt view model for rows that are checked Set the..." alt="" coords="217,5,396,48"/>
-<area shape="poly" id="edge15_Node000000_Node000001" title=" " alt="" coords="144,72,231,46,233,51,145,78"/>
-<area shape="rect" id="Node000002" href="$classtracecommon_1_1IssueTextProxyModel.html" title=" " alt="" coords="207,72,406,115"/>
-<area shape="poly" id="edge16_Node000000_Node000002" title=" " alt="" coords="174,91,206,91,206,96,174,96"/>
-<area shape="rect" id="Node000003" href="$classtracecommon_1_1TagFilterProxyModel.html" title=" " alt="" coords="210,139,403,181"/>
-<area shape="poly" id="edge17_Node000000_Node000003" title=" " alt="" coords="145,109,233,135,231,141,144,114"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,78,173,105"/>
+<area shape="rect" id="node2" href="$classrequirement_1_1CheckedFilterProxyModel.html" title="The CheckedFilterProxyModel class is used to filter a Qt view model for rows that are checked Set the..." alt="" coords="231,5,430,47"/>
+<area shape="rect" id="node3" href="$classtracecommon_1_1IssueTextProxyModel.html" title=" " alt="" coords="221,71,440,112"/>
+<area shape="rect" id="node4" href="$classtracecommon_1_1TagFilterProxyModel.html" title=" " alt="" coords="225,136,437,177"/>
 </map>

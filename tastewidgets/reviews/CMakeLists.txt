@@ -2,6 +2,7 @@ set(LIB_NAME reviews)
 
 add_library(${LIB_NAME} STATIC
     addnewreviewdialog.h addnewreviewdialog.cpp addnewreviewdialog.ui
+    componentreviewsproxymodel.h componentreviewsproxymodel.cpp
     gitlab/gitlabreviews.h gitlab/gitlabreviews.cpp
     review.h review.cpp
     reviewsmanager.h reviewsmanager.cpp

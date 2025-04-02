@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['removerequirement_0',['removeRequirement',['../classrequirement_1_1RequirementsManager.html#a9b5889e55c4e2f6c9076e0720fca37bb',1,'requirement::RequirementsManager::removeRequirement()'],['../classrequirement_1_1RequirementsWidget.html#a5811de37b0a709fba36eaeb34add28f6',1,'requirement::RequirementsWidget::removeRequirement()']]],
+  ['removerequirement_0',['removeRequirement',['../classrequirement_1_1RequirementsWidget.html#a5811de37b0a709fba36eaeb34add28f6',1,'requirement::RequirementsWidget::removeRequirement()'],['../classrequirement_1_1RequirementsManager.html#a9b5889e55c4e2f6c9076e0720fca37bb',1,'requirement::RequirementsManager::removeRequirement()']]],
   ['removereview_1',['removeReview',['../classreviews_1_1ReviewsManager.html#a71c22df2d271ffc3c2c8706a2b053756',1,'reviews::ReviewsManager']]],
   ['removetag_2',['removeTag',['../classtracecommon_1_1TagFilterProxyModel.html#a7cc0969fe071ea750204b3d27fdea5c7',1,'tracecommon::TagFilterProxyModel']]],
   ['reqifid_3',['reqIfId',['../classrequirement_1_1AddNewRequirementDialog.html#a165a53106a80d26d32315a6170af4ab0',1,'requirement::AddNewRequirementDialog']]],
