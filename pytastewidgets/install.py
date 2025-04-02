@@ -69,6 +69,7 @@ class SystemInfo:
         python_dir = ".local/lib/python"+ str(self.python_version[0]) + "." + str(self.python_version[1])
         self.python_packages_dir = str(pathlib.Path.home() / python_dir / "site-packages")
         self.pyside_dir = self.python_packages_dir + "/PySide6"
+        self.pytastewidgets_dir = self.python_packages_dir + "/PyTasteQtWidgets"
 
     def python_version_str(self):
         return str(self.python_version[0]) + "." + str(self.python_version[1]) + "." + str(self.python_version[2])
@@ -266,7 +267,7 @@ cmake_install(info)
 try:
     import glob
     for file in glob.glob(os.path.join(info.qt_lib_path, "*")):
-        shutil.move(file, info.pyside_dir)
+        shutil.move(file, info.pytastewidgets_dir)
 except OSError as e:
     print(f"Fatal error: {e}")
 
