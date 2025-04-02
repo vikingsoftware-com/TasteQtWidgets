@@ -1,9 +1,6 @@
 <map id="tracecommon::TraceCommonModelBase" name="tracecommon::TraceCommonModelBase">
-<area shape="rect" id="Node000001" title="Base model to hold requirements or reqviews for a Qt view." alt="" coords="101,80,296,123"/>
-<area shape="rect" id="Node000003" href="$classrequirement_1_1RequirementsModelBase.html" title="Base model to hold requirements for a Qt view." alt="" coords="5,171,184,213"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,135,121,172,117,168,161,131"/>
-<area shape="rect" id="Node000004" href="$classreviews_1_1ReviewsModelBase.html" title="Base model to hold reviews for a Qt view." alt="" coords="207,179,398,205"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="236,131,290,176,286,180,232,135"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="125,5,272,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,48,201,80,196,80,196,48"/>
+<area shape="rect" id="node1" title="Base model to hold requirements or reqviews for a Qt view." alt="" coords="114,80,327,121"/>
+<area shape="rect" id="node3" href="$classrequirement_1_1RequirementsModelBase.html" title="Base model to hold requirements for a Qt view." alt="" coords="5,169,207,211"/>
+<area shape="rect" id="node4" href="$classreviews_1_1ReviewsModelBase.html" title="Base model to hold reviews for a Qt view." alt="" coords="231,177,439,203"/>
+<area shape="rect" id="node2" title=" " alt="" coords="141,5,301,32"/>
 </map>

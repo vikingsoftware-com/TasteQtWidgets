@@ -1,15 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,81,75,108"/>
-<area shape="rect" id="Node000001" href="$classgitlab_1_1QGitlabClient.html" title="The QGitlabClient class is the main class to start requests on the Gitlab server." alt="" coords="162,5,300,32"/>
-<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="71,70,122,42,160,29,162,34,124,46,73,74"/>
-<area shape="rect" id="Node000002" href="$classrequirement_1_1GitLabRequirements.html" title=" " alt="" coords="123,56,339,83"/>
-<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="89,85,125,81,126,86,90,91"/>
-<area shape="rect" id="Node000003" href="$classreviews_1_1GitLabReviews.html" title="The GitLabReviews class." alt="" coords="149,107,313,133"/>
-<area shape="poly" id="edge10_Node000000_Node000003" title=" " alt="" coords="90,99,149,106,148,112,90,104"/>
-<area shape="rect" id="Node000004" href="$classtracecommon_1_1IssuesManager.html" title=" " alt="" coords="132,157,330,184"/>
-<area shape="poly" id="edge11_Node000000_Node000004" title=" " alt="" coords="73,115,124,143,158,154,156,159,122,148,71,120"/>
-<area shape="rect" id="Node000005" href="$classrequirement_1_1RequirementsManager.html" title=" " alt="" coords="387,120,565,163"/>
-<area shape="poly" id="edge12_Node000004_Node000005" title=" " alt="" coords="345,154,386,149,387,155,345,160"/>
-<area shape="rect" id="Node000006" href="$classreviews_1_1ReviewsManager.html" title=" " alt="" coords="389,187,564,213"/>
-<area shape="poly" id="edge13_Node000004_Node000006" title=" " alt="" coords="345,182,388,187,388,192,345,187"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,80,108"/>
+<area shape="rect" id="node2" href="$classgitlab_1_1QGitlabClient.html" title="The QGitlabClient class is the main class to start requests on the Gitlab server." alt="" coords="172,5,327,32"/>
+<area shape="rect" id="node3" href="$classrequirement_1_1GitLabRequirements.html" title=" " alt="" coords="128,56,371,83"/>
+<area shape="rect" id="node4" href="$classreviews_1_1GitLabReviews.html" title="The GitLabReviews class." alt="" coords="160,107,339,133"/>
+<area shape="rect" id="node5" href="$classtracecommon_1_1IssuesManager.html" title=" " alt="" coords="140,157,359,184"/>
+<area shape="rect" id="node6" href="$classrequirement_1_1RequirementsManager.html" title=" " alt="" coords="419,121,620,162"/>
+<area shape="rect" id="node7" href="$classreviews_1_1ReviewsManager.html" title=" " alt="" coords="423,187,616,213"/>
 </map>

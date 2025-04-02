@@ -1,9 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,43,152,69"/>
-<area shape="rect" id="Node000001" href="$classtracecommon_1_1TraceCommonModelBase.html" title="Base model to hold requirements or reqviews for a Qt view." alt="" coords="200,35,394,77"/>
-<area shape="poly" id="edge3_Node000000_Node000001" title=" " alt="" coords="167,53,199,53,199,59,167,59"/>
-<area shape="rect" id="Node000002" href="$classrequirement_1_1RequirementsModelBase.html" title="Base model to hold requirements for a Qt view." alt="" coords="448,5,626,48"/>
-<area shape="poly" id="edge4_Node000001_Node000002" title=" " alt="" coords="409,40,447,35,448,40,410,45"/>
-<area shape="rect" id="Node000003" href="$classreviews_1_1ReviewsModelBase.html" title="Base model to hold reviews for a Qt view." alt="" coords="442,72,632,99"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="410,67,442,71,441,76,409,72"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,42,165,69"/>
+<area shape="rect" id="node2" href="$classtracecommon_1_1TraceCommonModelBase.html" title="Base model to hold requirements or reqviews for a Qt view." alt="" coords="213,35,427,76"/>
+<area shape="rect" id="node3" href="$classrequirement_1_1RequirementsModelBase.html" title="Base model to hold requirements for a Qt view." alt="" coords="478,5,679,47"/>
+<area shape="rect" id="node4" href="$classreviews_1_1ReviewsModelBase.html" title="Base model to hold reviews for a Qt view." alt="" coords="475,71,683,98"/>
 </map>

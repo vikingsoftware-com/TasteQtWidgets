@@ -1,5 +1,4 @@
 <map id="reviews::AddNewReviewDialog" name="reviews::AddNewReviewDialog">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,211,107"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="74,5,142,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,48,111,80,105,80,105,48"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,231,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="81,5,155,32"/>
 </map>
