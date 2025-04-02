@@ -69,6 +69,7 @@ class SystemInfo:
         python_dir = ".local/lib/python"+ str(self.python_version[0]) + "." + str(self.python_version[1])
         self.python_packages_dir = str(pathlib.Path.home() / python_dir / "site-packages")
         self.pyside_dir = self.python_packages_dir + "/PySide6"
+        self.pytastewidgets_dir = self.python_packages_dir + "/PyTasteQtWidgets"
 
     def python_version_str(self):
         return str(self.python_version[0]) + "." + str(self.python_version[1]) + "." + str(self.python_version[2])
@@ -262,3 +263,17 @@ cmake_build(info, ncpus - 1, environ=env_copy)
 
 print("** Install module")
 cmake_install(info)
+# Move the Qt libraries to the PyTasteWidgets folder
+try:
+    import glob
+    for file in glob.glob(os.path.join(info.qt_lib_path, "*")):
+        shutil.move(os.path.join(info.qt_lib_path, file), os.path.join(info.pytastewidgets_dir, file))
+except OSError as e:
+    print(f"Qt libraries could'nt be copied to the PyTasteQtWidgets folder: {e}")
+
+try:
+    from PySide6.QtWidgets import QApplication
+    from PySide6.QtCore import SIGNAL, SLOT, QObject
+    from PyTasteQtWidgets import TasteQtWidgets as QtTaste
+except ImportError as e:
+    print(f"Required module 'PyTasteQtWidgets' not found: {e}")
