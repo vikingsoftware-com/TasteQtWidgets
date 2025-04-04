@@ -119,6 +119,14 @@ void RequirementsWidget::setModel(RequirementsModelBase *model)
 
     connect(m_model, &requirement::RequirementsModelBase::rowsInserted, this,
             [this]() { ui->allRequirements->resizeRowsToContents(); });
+    connect(m_model, &requirement::RequirementsModelBase::dataChanged, [this](const QModelIndex &index) {
+        if (index.column() == RequirementsModelBase::CHECKED) {
+            bool isChecked = m_model->data(index, Qt::CheckStateRole).toBool();
+            QModelIndex reqID_index = m_model->index(index.row(), RequirementsModelBase::REQUIREMENT_ID);
+            QString ReqID = m_model->data(reqID_index, Qt::DisplayRole).toString();
+            Q_EMIT requirementSelected(ReqID, isChecked);
+        }
+    });
 }
 
 QUrl RequirementsWidget::url() const
