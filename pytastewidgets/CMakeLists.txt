@@ -89,6 +89,8 @@ set(TasteQtWidgets_SRC
 
     ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/reviews_review_wrapper.h
     ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/reviews_review_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/reviews_componentreviewsproxymodel_wrapper.h
+    ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/reviews_componentreviewsproxymodel_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/reviews_reviewsmanager_wrapper.h
     ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/reviews_reviewsmanager_wrapper.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/reviews_reviewsmodelbase_wrapper.h

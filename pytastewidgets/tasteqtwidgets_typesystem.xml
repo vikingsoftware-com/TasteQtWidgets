@@ -20,8 +20,9 @@
             <enum-type name="HEADER_SECTIONS"/>
         </object-type>
     </namespace-type>
-
     <namespace-type name="reviews" visible="yes">
+        <object-type name="ComponentReviewsProxyModel">
+        </object-type>
         <object-type name="ReviewsWidget">
         </object-type>
         <object-type name="ReviewsManager">

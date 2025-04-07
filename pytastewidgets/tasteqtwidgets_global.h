@@ -15,5 +15,6 @@
 #include <reviews/reviewsmanager.h>
 #include <reviews/reviewsmodelbase.h>
 #include <reviews/reviewswidget.h>
+#include <reviews/componentreviewsproxymodel.h>
 #include <tracecommon/issuesmanager.h>
 #include <tracecommon/tracecommonlibrary.h>
