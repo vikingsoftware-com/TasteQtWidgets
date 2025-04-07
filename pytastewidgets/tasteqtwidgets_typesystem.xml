@@ -32,6 +32,8 @@
             <enum-type name="RoleNames"/>
             <enum-type name="HEADER_SECTIONS"/>
         </object-type>
+        <object-type name="ComponentReviewsProxyModel">
+        </object-type>
     </namespace-type>
 
     <function signature="initTraceCommonLibrary()"/>
