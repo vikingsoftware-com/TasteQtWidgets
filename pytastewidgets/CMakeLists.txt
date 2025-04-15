@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(TasteQtWidgets VERSION 0.0.1 DESCRIPTION "C++/Qt Widgets for ESA Python projects" LANGUAGES CXX)
+project(TasteQtWidgets VERSION 1.3.0 DESCRIPTION "C++/Qt Widgets for ESA Python projects" LANGUAGES CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../cmake")
 
